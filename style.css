@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* We can't write Box-sizing property in body 
+  because box-sizing isnot something that gets inherited.
+  instead, we write it in universal selectors to apply for all. */
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444444;
+}
+/* this one is called list selectors */
+/* When list selectors are repeated, css will pick the last one. */
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 35px;
+
+  position: relative;
+}
+p {
+  font-size: 22px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-family: 20px;
+
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* .post-header {
+  margin-bottom: 40px;
+} */
+/*This way of selecting is called descendant selectors
+  article header p { 
+    font-style:italic
+  }
+  using id and class selector is preferrable than 
+  nesting descendant selectors*/
+/*Use .class selectorand #idselector*/
+#author {
+  font-style: italic;
+  font-style: 18px;
+  color: rgb(244, 179, 63, 0.7);
+}
+.author {
+  color: red;
+}
+/* rgb() stands for red-green-blue
+  rgba() stands for red-blue-green with transparency(alpha) */
+
+/* Decrease the font of the footer. */
+
+/* footer p {
+    font-size: 15px;
+  } */
+#copyright {
+  font-size: 16px;
+}
+
+/* The big difference between id and class selectors is that
+  id selectors cannot be repeated while classes can. id is unique and 
+  can't be repeated.
+      If we need to reuse name multiple times, 
+      we should use class instead of id.
+  */
+
+.related-author {
+  font-style: italic;
+}
+
+/* ul li {
+    font-size: 15px;
+    list-style: none;
+  } */
+.related {
+  list-style: none;
+  margin-left: 0;
+}
+/* We have two ways of writing colors:
+  rgb/rgba notation rgb(244,179,63) rgb(255,255,255) 
+  hexadecimal notation  #00ffff    #bbb
+  In the real world, we mostly use hexadecimal notation for coloring and
+  rgba for transparency.
+  
+  When colors in all 3 channels are the same, we get grey color.
+  example:
+  #444444 grey
+  rgb(69,69,69) grey
+  #b7b7b7
+  rgb(183,183,183)
+  
+  */
+
+.main-header {
+  background-color: #f7f7f7;
+  /* padding-left: 20px;
+    padding-right: 20px; */
+  /* in short */
+  padding: 20px 20px;
+
+  position: relative;
+  height: 80px;
+}
+.related-post {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 10px 0;
+  /* width: 500px; */
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+/* * {
+    margin: 0;
+    Use universal selector and margin=0, padding=0 like this 
+    to fomat your page as you wish. It is called global reset.
+  } */
+
+/* This one is called pseudo class */
+/*e for marking the first paragraph p in the article 
+  the p should be the first-most(first-chiled in the article. 
+  otherwise,  pseudo-classes won't work.
+  */
+
+/* 
+  li:last-child {
+    font-style: italic;
+  }
+  li:nth-child(odd) {
+    font-weight: bold;
+  }
+  li :nth-child(2) {
+    font-family: Georgia;
+  }
+  article p:last-child {
+    color: rgb(54, 82, 78);
+  } */
+
+/* Styling links */
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+/* use pseudo-class :visited for a visited link */
+/* They are usually the same as the normal link */
+a:visited {
+  color: #1098ad;
+}
+
+/* hover is used when the mouse hovers on the link or button */
+a:hover {
+  color: orangered;
+  text-decoration: underline;
+  font-weight: bold;
+}
+/* active is used when we click the link or button */
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+/* LVHA */
+
+/* Resolving conflicts */
+/* 
+  Inline > Id > class > elements(p, h1..) 
+  precedence/priority
+  */
+/* If selectors have the same hierachy, then the last selecotr will be 
+  applied  */
+
+/* Universal selectors */
+/*    *{
+         }
+  */
+/* Universal element applies for all elements . 
+  They can't be inherited. But body can be inherited
+  */
+
+/* THE CSS BOX MODEL */
+/* 
+  
+  Content: text, images...
+  Border: a line around an element, still inside of the element
+  Padding: Invisible space around the element
+             (between the content and the border) inside the element
+  Margin: Space outside of the element, or between elements 
+  Fill area: area that gets filled with background-color/background-image. */
+
+/* ul {
+    padding-left: 50px;
+    margin-bottom: 0;
+  }
+  ol {
+    padding-left: 50px;
+    margin-bottom: 0px;
+  }
+  
+  ol,
+  li {
+    margin-left: 40px;
+  } */
+
+li {
+  margin: 10px 20px;
+}
+article {
+  margin-bottom: 60px;
+}
+
+/* Collapsing margins property */
+/* when margins collapse or get attached, css picks the larger distance.
+  the distances arenot added up.  */
+
+.post-img {
+  width: 100%; /*100% of the parent container */
+  height: auto;
+}
+
+/* Centering our webpage */
+.container {
+  padding: 20px 20px;
+
+  width: 1200px;
+  /* margin-left: auto;
+    margin-right: auto; */
+
+  margin: 0 auto;
+}
+/* 
+  Here the browser centers the container 
+  by making margin-left and margin-right equal. 
+  auto means that the browser automatically figures out the width*/
+
+/* Images act as inlne-block boxes */
+.btn-like {
+  text-align: right;
+
+  cursor: pointer;
+  position: fixed;
+  /* It works in relation to another parent element */
+  bottom: 10px;
+  right: 50px;
+  padding: 10px 15px;
+}
+/* bottom: 50px;
+    right: 50px;
+  } 
+  .btn-relative {
+    padding: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+  }
+  */
+
+/* Pseudo- classes and elements */
+/* Pseudo classes have 1 colon e.g li:last-child 
+  pseudo objects have 2 colons e.g   h2::first-line
+  */
+header h1::first-letter {
+  font-style: normal;
+  margin-right: 4px;
+  color: red;
+}
+p::first-letter {
+  background-color: bisque;
+}
+
+p::first-letter {
+  color: red;
+}
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #000;
+  padding: 8px 15px;
+
+  font-size: 16px;
+  /* To use  top, bottom, right, left properties,
+    we have to set position absolute & the header relative.  */
+  position: absolute;
+  right: -25px;
+  top: -10px;
+}
+/* The higher the numbers of selector specifity, the more/prior the selectors will apply. */
+/* Try to keep specifity low as much as possible */
+
+/* FLOATS */
+
+.related-post {
+  width: 300px;
+
+  padding: 40px 40px;
+  box-sizing: border-box;
+}
+/* footer {
+  clear: both;
+} */
+
+/* 
+  <div class="container">
+        <header class="main-header">
+          <h1>📘 The Code Magazine</h1>
+  
+          <nav>
+            <a href="#">Blog</a>
+            <a href="#">Challenges</a>
+            <a href="#">Flexbox</a>
+            <a href="#">CSS Grid</a>
+          </nav>
+        </header> */
+/* .main-header h1 {
+  float: left;
+}
+.main-header nav {
+  float: right;
+} */
+nav a {
+  margin-right: 20px;
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CSS GRID TUTORIAL */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 50px;
+}
+.main-header {
+  grid-column: 1 / span 2;
+}
+.article {
+}
+aside {
+  align-self: center;
+}
+footer {
+  background-color: #1098ad;
+  grid-column: 1/3;
+}
